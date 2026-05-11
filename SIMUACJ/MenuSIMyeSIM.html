@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal SIM/eSIM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f3f2f1;
+      color: #323130;
+    }
+
+    .topbar {
+      width: 100%;
+      height: 60px;
+      background: white;
+      border-bottom: 1px solid #e1dfdd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #005a9c;
+    }
+
+    .nav {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      color: #605e5c;
+    }
+
+    .hero {
+      width: 100%;
+      height: 260px;
+      background: linear-gradient(135deg, #005a9c, #0078d4);
+      display: flex;
+      align-items: center;
+      padding: 40px 8%;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      font-size: 17px;
+      max-width: 650px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    .main {
+      width: 100%;
+      padding: 45px 8%;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #323130;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      min-height: 220px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      transition: 0.25s ease;
+      cursor: pointer;
+      border: 1px solid #edebe9;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: #eff6fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #005a9c;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #323130;
+    }
+
+    .card p {
+      color: #605e5c;
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    .card button {
+      margin-top: 25px;
+      border: none;
+      background: #005a9c;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card button:hover {
+      background: #004578;
+    }
+
+    .info-section {
+      margin-top: 60px;
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .info-section h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .placeholder {
+      width: 100%;
+      height: 200px;
+      border-radius: 14px;
+      background: #f8f8f8;
+      border: 2px dashed #c8c6c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a8886;
+      font-size: 18px;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding: 25px;
+      text-align: center;
+      background: white;
+      border-top: 1px solid #e1dfdd;
+      color: #605e5c;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      .hero {
+        height: auto;
+        padding: 50px 8%;
+      }
+
+      .hero-content h1 {
+        font-size: 32px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">Portal SIM/eSIM</div>
+
+    <nav class="nav">
+      <span>Inicio</span>
+      <span>Servicios</span>
+      <span>Soporte</span>
+      <span>Configuración</span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Portal de conectividad universitaria</h1>
+      <p>
+        Plataforma institucional para administración de SIM y eSIM universitarias.
+        Consulta tu estado de red, solicita servicios y recibe soporte técnico.
+      </p>
+    </div>
+  </section>
+
+  <main class="main">
+
+    <h2 class="section-title">Servicios principales</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div>
+          <div class="card-icon">📶</div>
+          <h3>Estado de red</h3>
+          <p>
+            Consulta información de tu SIM/eSIM, datos restantes,
+            consumo mensual y estado de conexión.
+          </p>
+        </div>
+
+        <button>Ver información</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-icon">📱</div>
+          <h3>Solicitar SIM</h3>
+          <p>
+            Solicita una nueva SIM o eSIM universitaria mediante
+            formularios institucionales.
+          </p>
+        </div>
+
+        <button>Iniciar solicitud</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-icon">🛠️</div>
+          <h3>Soporte técnico</h3>
+          <p>
+            Accede a preguntas frecuentes, ayuda personalizada
+            y solución de problemas.
+          </p>
+        </div>
+
+        <button>Obtener ayuda</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-icon">💻</div>
+          <h3>Configuración móvil</h3>
+          <p>
+            Configura tu dispositivo móvil para utilizar
+            servicios SIM/eSIM universitarios.
+          </p>
+        </div>
+
+        <button>Configurar</button>
+      </div>
+
+    </div>
+
+    <section class="info-section">
+      <h2>Área de contenido</h2>
+
+      <div class="placeholder">
+        Espacio editable para agregar contenido SharePoint
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Portal institucional - Universidad
+  </footer>
+
+</body>
+</html>
