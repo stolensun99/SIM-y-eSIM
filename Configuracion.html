@@ -349,7 +349,8 @@ a.btn{
 @media(max-width:900px){
 
     .settings-grid{
-        grid-template-columns:1fr;
+    display:grid;
+    grid-template-columns:1fr !important;
     }
 
     .ms-search{
@@ -409,6 +410,24 @@ a.btn{
 
     .mobile-config{
         display:block;
+    }
+
+    .microsoft-bar{
+        padding:0 12px;
+    }
+
+    .ms-left{
+        gap:10px;
+        min-width:0;
+    }
+
+    .ms-right{
+        gap:10px;
+        margin-left:12px;
+    }
+
+    .ms-logo{
+        font-size:13px;
     }
 
 }
@@ -927,21 +946,21 @@ function toggleEsimGuide(){
             <div class="mobile-buttons">
 
                 <a class="mobile-btn"
-                href="intent:#Intent;action=android.settings.NETWORK_OPERATOR_SETTINGS;end" data-i18n="mobile_btn_sim">
+                href="intent://#Intent;action=android.settings.NETWORK_OPERATOR_SETTINGS;end" data-i18n="mobile_btn_sim">
 
                     Abrir configuración SIM
 
                 </a>
 
                 <a class="mobile-btn"
-                href="intent:#Intent;action=android.settings.DATA_ROAMING_SETTINGS;end" data-i18n="mobile_btn_data">
+                href="intent://data#Intent;action=android.settings.DATA_ROAMING_SETTINGS;scheme=package;end" data-i18n="mobile_btn_data">
 
                     Abrir datos móviles
 
                 </a>
 
                 <a class="mobile-btn"
-                href="intent:#Intent;action=android.settings.WIRELESS_SETTINGS;end" data-i18n="mobile_btn_network">
+                href="intent://network#Intent;action=android.settings.WIRELESS_SETTINGS;scheme=package;end">
 
                     Abrir redes móviles
 
