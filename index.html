@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal SIM/eSIM UACJ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== DARK MODE ===== */
+
+body.dark-mode{
+    background:#1f1f1f;
+    color:#f3f3f3;
+}
+
+/* BARRAS */
+
+body.dark-mode .topbar,
+body.dark-mode .config-panel,
+body.dark-mode .setting-card,
+body.dark-mode .card,
+body.dark-mode .footer,
+body.dark-mode .top-right{
+    background:#2b2b2b;
+    color:white;
+    border-color:#3b3b3b;
+}
+
+/* TEXTOS */
+
+body.dark-mode .subtitle,
+body.dark-mode .setting-card p,
+body.dark-mode .card p,
+body.dark-mode .mobile-sub,
+body.dark-mode .notice,
+body.dark-mode .guide-step{
+    color:#d6d6d6;
+}
+
+/* NAV */
+
+body.dark-mode .nav-item{
+    color:#d0d0d0;
+}
+
+body.dark-mode .nav-item:hover{
+    color:#4aa8ff;
+}
+
+body.dark-mode .nav-active{
+    color:#4aa8ff;
+    border-bottom:3px solid #4aa8ff;
+}
+
+/* MENU HAMBURGUESA */
+
+body.dark-mode .top-right{
+    background:#252525;
+}
+
+body.dark-mode .menu-btn{
+    color:white;
+}
+
+/* TARJETAS */
+
+body.dark-mode .card,
+body.dark-mode .setting-card{
+    background:#323130;
+}
+
+/* NOTICE */
+
+body.dark-mode .notice{
+    background:#243647;
+    border-left:5px solid #4aa8ff;
+}
+
+/* GUIA ESIM */
+
+body.dark-mode .guide-step{
+    background:#243647;
+    border-left:4px solid #4aa8ff;
+}
+
+/* INPUT */
+
+body.dark-mode .language-select{
+    background:#3a3a3a;
+    color:white;
+    border:1px solid #555;
+}
+
+/* SEARCH */
+
+body.dark-mode .ms-search{
+    background:#3a3a3a;
+    color:#d0d0d0;
+}
+
+/* BOTONES */
+
+body.dark-mode .theme-btn{
+    background:#0078d4;
+}
+
+body.dark-mode .active-theme{
+    background:#005a9e;
+}
+
+/* TITULOS */
+
+body.dark-mode .title,
+body.dark-mode .section-title,
+body.dark-mode .mobile-title,
+body.dark-mode .top-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3{
+    color:white;
+}
+
+/* PANELES */
+
+body.dark-mode .large-panel,
+body.dark-mode .side-panel,
+body.dark-mode .link-card,
+body.dark-mode .list-item{
+    background:#2b2b2b;
+    color:#f3f3f3;
+    border-color:#3b3b3b;
+}
+
+/* TEXTOS INTERNOS */
+
+body.dark-mode .large-panel p,
+body.dark-mode .large-panel h3,
+body.dark-mode .side-panel h3,
+body.dark-mode .list-item{
+    color:#f3f3f3 !important;
+}
+
+/* PLACEHOLDER */
+
+body.dark-mode .placeholder{
+    background:#252525;
+    border:2px dashed #555;
+    color:#d0d0d0;
+}
+
+/* LINKS DEL MENÚ */
+
+body.dark-mode .top-right a{
+    color:#f3f3f3 !important;
+}
+
+/* MENÚ HAMBURGUESA MOBILE */
+
+body.dark-mode .top-right{
+    background:#1f1f1f;
+    border-right:1px solid #3b3b3b;
+}
+
+/* ITEMS MOBILE */
+
+body.dark-mode .top-right .nav-item{
+    color:#f3f3f3;
+}
+
+body.dark-mode .top-right .nav-item:hover{
+    background:#2c2c2c;
+}
+
+/* SEARCH */
+
+body.dark-mode .ms-search{
+    background:#2b2b2b;
+    color:#f3f3f3;
+}
+
+/* MICROSOFT BAR */
+
+body.dark-mode .microsoft-bar{
+    background:#111111;
+}
+
+.microsoft-bar{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    width:100%;
+    height:42px;
+    background:#1b1a19;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    font-size:14px;
+}
+
+.ms-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.ms-logo{
+    font-weight:600;
+    font-size:15px;
+}
+
+.ms-search{
+    background:#f6f4f2;
+    border-radius:4px;
+    padding:7px 14px;
+    min-width:350px;
+    color:#373736ac;
+}
+
+.ms-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.circle-icon{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#605e5c;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#323130;
+    overflow-x:hidden;
+}
+
+.topbar{
+    position:sticky;
+    top:42px;
+    z-index:9998;
+    transition:all 0.25s ease;
+    height:70px;
+    background:#ffffff;
+    border-bottom:1px solid #e1dfdd;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 24px;
+}
+
+.topbar-small{
+    height:50px;
+    padding:0 20px;
+}
+
+.topbar-small .top-title{
+    font-size:18px;
+}
+
+.topbar-small .logo-box{
+    width:32px;
+    height:32px;
+}
+
+.top-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-box{
+    width:40px;
+    height:40px;
+    background:#0078d4;
+    border-radius:4px;
+}
+
+.top-title{
+    font-size:22px;
+    font-weight:600;
+}
+
+.top-right{
+    display:flex;
+    gap:48px;
+    color:#605e5c;
+    font-size:14px;
+}
+
+.nav-item{
+    cursor:pointer;
+    height:48px;
+    display:flex;
+    align-items:center;
+    transition:0.2s;
+    border-bottom:3px solid transparent;
+}
+
+.nav-item:hover{
+    color:#0078d4;
+}
+
+.nav-active{
+    color:#0078d4;
+    border-bottom:3px solid #0078d4;
+    font-weight:600;
+    width:70px;
+}
+
+.banner{
+    width:100%;
+    height:280px;
+    background-image:
+    linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+    url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+    padding:50px 8%;
+}
+
+.banner-content{
+    color:white;
+}
+
+.banner-content h1{
+    font-size:42px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.banner-content p{
+    font-size:17px;
+    max-width:700px;
+    line-height:1.5;
+}
+
+.main{
+    width:100%;
+    padding:40px 8%;
+}
+
+.quick-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:-60px;
+    position:relative;
+    z-index:10;
+}
+
+.link-card{
+    background:white;
+    border-radius:12px;
+    padding:24px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    transition:0.2s;
+    border:1px solid #edebe9;
+}
+
+.link-card:hover{
+    transform:translateY(-4px);
+}
+
+.icon{
+    width:52px;
+    height:52px;
+    border-radius:10px;
+    background:#eff6fc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.link-card h3{
+    font-size:20px;
+    margin-bottom:10px;
+    color:#323130;
+}
+
+.link-card p{
+    font-size:14px;
+    color:#605e5c;
+    line-height:1.5;
+}
+
+.section{
+    margin-top:55px;
+}
+
+.section h2{
+    font-size:30px;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.content-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+}
+
+.large-panel{
+    background:white;
+    border-radius:14px;
+    padding:30px;
+    min-height:300px;
+    border:1px solid #e1dfdd;
+}
+
+.side-panel{
+    background:white;
+    border-radius:14px;
+    padding:30px;
+    border:1px solid #e1dfdd;
+}
+
+.placeholder{
+    width:100%;
+    height:220px;
+    background:#faf9f8;
+    border:2px dashed #c8c6c4;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#8a8886;
+    font-size:17px;
+}
+
+.list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:18px;
+}
+
+.list-item{
+    padding:14px;
+    background:#faf9f8;
+    border-radius:10px;
+    font-size:14px;
+}
+
+.footer{
+    margin-top:60px;
+    background:white;
+    border-top:1px solid #e1dfdd;
+    padding:24px;
+    text-align:center;
+    color:#605e5c;
+    font-size:14px;
+}
+
+.menu-btn{
+    display:none;
+}
+
+.text-muted{
+    color:#605e5c;
+}
+
+body.dark-mode .text-muted{
+    color:#d6d6d6 !important;
+}
+
+@media(max-width:900px){
+
+    .ms-search{
+        display:none;
+    }
+
+    .menu-btn{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:28px;
+        cursor:pointer;
+        color:#323130;
+    }
+
+    .topbar{
+        height:70px;
+        padding:0 18px;
+        flex-direction:row;
+        align-items:center;
+    }
+
+    .top-left{
+        width:100%;
+    }
+
+    .top-title{
+        font-size:20px;
+    }
+
+    .top-right{
+        position:fixed;
+        top:112px;
+        left:-100%;
+        width:260px;
+        height:100vh;
+        background:white;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        padding:20px;
+        transition:0.3s;
+        border-right:1px solid #e1dfdd;
+        overflow-y:auto;
+        z-index:9999;
+        display:flex;
+    }
+
+    .top-right.show-menu{
+        left:0;
+    }
+
+    .nav-item{
+        width:100%;
+        height:54px;
+        border-bottom:none;
+        padding-left:8px;
+        white-space:nowrap;
+        flex:none;
+    }
+
+    .content-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .quick-links{
+        grid-template-columns:1fr;
+    }
+
+    .banner{
+        height:240px;
+        padding:30px 6%;
+    }
+
+    .banner-content h1{
+        font-size:34px;
+    }
+
+    .banner-content p{
+        font-size:15px;
+    }
+
+    .panel,
+    .large-panel,
+    .side-panel{
+        padding:22px;
+    }
+
+    .microsoft-bar{
+        padding:0 12px;
+    }
+
+    .ms-left{
+        gap:10px;
+        min-width:0;
+    }
+
+    .ms-right{
+        gap:10px;
+        margin-left:12px;
+    }
+
+    .ms-logo{
+        font-size:13px;
+    }
+
+}
+
+/* ===== FIX GENERAL DARK MODE ===== */
+
+body.dark-mode div,
+body.dark-mode section,
+body.dark-mode main,
+body.dark-mode footer{
+    border-color:#3b3b3b;
+}
+
+/* fondos blancos */
+
+body.dark-mode .config-panel,
+body.dark-mode .card,
+body.dark-mode .setting-card,
+body.dark-mode .footer,
+body.dark-mode .topbar,
+body.dark-mode .top-right{
+    background:#2b2b2b !important;
+}
+
+/* fondos grises claros */
+
+body.dark-mode .card,
+body.dark-mode .setting-card{
+    background:#323130 !important;
+}
+
+/* textos */
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode label,
+body.dark-mode div{
+    color:#f3f3f3;
+}
+
+/* excepción navbar */
+
+body.dark-mode .nav-item{
+    color:#d0d0d0;
+}
+
+/* search */
+
+body.dark-mode .ms-search{
+    background:#3a3a3a;
+    color:#d0d0d0;
+}
+</style>
+<script>
+    
+    window.onload = function(){
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if(savedTheme === "dark"){
+
+        document.body.classList.add("dark-mode");
+
+    }
+
+}
+
+    
+window.addEventListener("scroll", function(){
+
+    const topbar = document.querySelector(".topbar");
+
+    if(window.scrollY > 20){
+        topbar.classList.add("topbar-small");
+    }else{
+        topbar.classList.remove("topbar-small");
+    }
+
+});
+</script>
+<script>
+
+function toggleMenu(){
+    document.querySelector(".top-right").classList.toggle("show-menu");
+}
+
+</script>
+</head>
+<body data-portal-title-key="doc_title_home">
+
+<script src="portal-i18n.js"></script>
+
+<div class="microsoft-bar">
+    <div class="ms-left">
+        <div class="ms-logo"; style="width: 200px;"><a href="https://alumnosuacj.sharepoint.com/sites/conectauacj"><img style="height: 40px;"alt="Universidad Autonoma de Ciudad Juarez (UACJ)" title="Universidad Autonoma de Ciudad Juarez (UACJ)" src="data:image/png;base64,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"></a></div>
+        <div class="ms-logo"; style="width: 380px;; ">Sharepoint</div>
+        <div class="ms-search"><span data-i18n="ms_search">🔍 Buscar</span></div>
+    </div>
+
+    <div class="ms-right">
+        <span>⚙</span>
+        <span>❔</span>
+        <div class="circle-icon">JA</div>
+    </div>
+
+</div>
+
+<div class="topbar">
+    <div class="top-left">
+        <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+        </div>
+        <div class="logo-box"></div>
+        <div class="top-title" data-i18n="portal_brand">Portal SIM/eSIM UACJ</div>
+    </div>
+
+    <div class="top-right">
+    <a style="text-decoration: none;color:#605e5c;" href="index.html"><span class="nav-item nav-active"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/17434/17434346.png"></div>&nbsp;&nbsp;<span data-i18n="nav_home">Inicio</span></span></a>
+    <a style="text-decoration: none;color:#605e5c;"href="Estadodered.html"><span class="nav-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/15782/15782419.png"></div>&nbsp;&nbsp;<span data-i18n="nav_network">Estado de red</span></span></a>
+    <a style="text-decoration: none;color:#605e5c;"href="SolicitarSIM.html"><span class="nav-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/15720/15720843.png"></div>&nbsp;&nbsp;<span data-i18n="nav_request_sim">Solicitar SIM</span></span></a>    
+    <a style="text-decoration: none;color:#605e5c;"href="SoporteTecnico.html"><span class="nav-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/11247/11247696.png"></div>&nbsp;&nbsp;<span data-i18n="nav_support">Soporte técnico</span></span></a>
+    <a style="text-decoration: none;color:#605e5c;"href="Configuracion.html"><span class="nav-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/17055/17055210.png"></div>&nbsp;&nbsp;<span data-i18n="nav_settings">Configuración</span></span></a>
+</div>
+
+</div>
+
+<section class="banner">
+
+    <div class="banner-content">
+        <h1 data-i18n="menu_banner_h1">Portal SIM/eSIM UACJ</h1>
+        <p data-i18n="menu_banner_p">
+            Sistema institucional de conectividad universitaria diseñado para brindar acceso móvil seguro y accesible a estudiantes mediante tecnologías SIM y eSIM.
+        </p>
+    </div>
+
+</section>
+
+<main class="main">
+
+    
+
+    <section class="section">
+
+        <h2 data-i18n="menu_h2_what">¿Qué es el Portal SIM/eSIM?</h2>
+
+        <div class="content-grid">
+
+            <div class="large-panel">
+
+                <h3 style="font-size:26px; margin-bottom:18px;" data-i18n="menu_large_h3">Conectividad académica para estudiantes</h3>
+
+                <p class="text-muted" style="line-height:1.8; font-size:16px; margin-bottom:18px;" data-i18n="menu_large_p1">
+                    El Portal SIM/eSIM UACJ es una plataforma institucional enfocada en proporcionar servicios móviles universitarios a estudiantes mediante líneas SIM físicas y eSIM digitales.
+                </p>
+
+                <p class="text-muted" style="line-height:1.8; font-size:16px; margin-bottom:18px;" data-i18n="menu_large_p2">
+                    A través de este sistema, los alumnos podrán consultar el estado de su red, monitorear el consumo de datos, solicitar nuevas líneas universitarias y acceder a soporte técnico especializado desde cualquier dispositivo.
+                </p>
+
+                <p class="text-muted" style="line-height:1.8; font-size:16px;" data-i18n="menu_large_p3">
+                    La plataforma busca mejorar la conectividad académica dentro y fuera del campus, facilitando el acceso a recursos educativos digitales mediante una experiencia moderna, rápida y completamente integrada con los servicios universitarios.
+                </p>
+
+            </div>
+
+            <div class="side-panel">
+                <h3 style="font-size:22px; margin-bottom:20px;" data-i18n="menu_side_h3">Servicios disponibles</h3>
+
+                <div class="list">
+                    <div class="list-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/15782/15782419.png"></div><span data-i18n="menu_li_network">Estado de red y consumo</span></div>
+                    <div class="list-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/15720/15720843.png"></div><span data-i18n="menu_li_request">Solicitud de SIM/eSIM</span></div>
+                    <div class="list-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/11247/11247696.png"></div><span data-i18n="menu_li_support">Soporte técnico</span></div>
+                    <a style="text-decoration: none;color:#605e5c;"href="Configuracion.html"><span class="nav-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/17055/17055210.png"></div>&nbsp;&nbsp;<span data-i18n="nav_settings">Configuración</span></span></a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+Dirección General de Innovación Educativa<br>
+​​​​Subdirección de Desarrollo Académico<br>
+Programa Integral de Tutorías y Trayectorias Académicas (PITTA)<br>
+​​​+52 656 688 2262 Ext. 8748 y 8749<br>
+​​​​​​pitta@uacj.mx<br>
+</footer>
+
+</body>
+</html>
