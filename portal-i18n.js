@@ -237,7 +237,7 @@
             menu_li_network: "Network status and usage",
             menu_li_request: "SIM/eSIM request",
             menu_li_support: "Technical support",
-            menu_li_settings: "Configuration",
+            menu_li_settings: "Settings",
 
             net_banner_h1: "Network status",
             net_banner_p: "Check your university SIM/eSIM status and mobile data usage.",
