@@ -40,6 +40,7 @@
             menu_li_network: "Estado de red y consumo",
             menu_li_request: "Solicitud de SIM/eSIM",
             menu_li_support: "Soporte técnico",
+            menu_li_settings: "Configuración",
 
             net_banner_h1: "Estado de red",
             net_banner_p: "Consulta el estado de tu SIM/eSIM universitaria y consumo de datos móviles.",
@@ -236,6 +237,7 @@
             menu_li_network: "Network status and usage",
             menu_li_request: "SIM/eSIM request",
             menu_li_support: "Technical support",
+            menu_li_settings: "Configuration",
 
             net_banner_h1: "Network status",
             net_banner_p: "Check your university SIM/eSIM status and mobile data usage.",
