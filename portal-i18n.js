@@ -159,9 +159,9 @@
             phys_th_avail: "Disponibilidad",
             phys_th_state: "Estado",
 
-            banner_title: "Solicitar eSIM",
+            banner_title: "Configuración",
             banner_subtitle:
-                "Completa el siguiente formulario institucional para solicitar tu eSIM universitaria.",
+                "En este apartado puedes consultar informacion y cambiar modo claro u oscuro, además del idioma.",
             service_title: "Configuración del servicio",
             service_subtitle:
                 "Administra opciones básicas relacionadas con tu línea SIM/eSIM universitaria y consulta accesos rápidos para dispositivos móviles.",
@@ -355,8 +355,8 @@
             phys_th_avail: "Availability",
             phys_th_state: "Status",
 
-            banner_title: "Request eSIM",
-            banner_subtitle: "Fill out the institutional form to request your university eSIM.",
+            banner_title: "Settings",
+            banner_subtitle: "In this section you can find information and change light or dark mode, as well as the language.",
             service_title: "Service configuration",
             service_subtitle:
                 "Manage basic SIM/eSIM university line settings and quick mobile access options.",
