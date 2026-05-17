@@ -530,6 +530,10 @@ textarea{
     cursor:pointer;
     font-size:15px;
     transition:0.2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
 }
 
 .option-btn:hover{
@@ -900,9 +904,9 @@ function toggleMenu(){
                 Recibe una tarjeta SIM universitaria física para conectividad móvil institucional.
             </p>
 
-            <button class="option-btn">
-                <a style="text-decoration: none; color: #ffffff;" href="SolicitarSiMfis.html"><span data-i18n="hub_phys_btn"> Solicitar SIM</span></a>
-            </button>
+            <a class="option-btn" href="SolicitarSiMfis.html">
+            <span data-i18n="hub_phys_btn">Solicitar SIM</span>
+            </a>
 
         </div>
 
@@ -918,9 +922,9 @@ function toggleMenu(){
                 Activa una eSIM directamente desde tu dispositivo compatible.
             </p>
 
-            <button class="option-btn">
-                <a style="text-decoration: none; color: #ffffff;" href="SolicitareSIM.html"><span data-i18n="hub_esim_btn"> Solicitar eSIM</span></a>
-            </button>
+            <a class="option-btn" href="SolicitareSIM.html">
+            <span data-i18n="hub_esim_btn">Solicitar eSIM</span>
+            </a>
 
         </div>
 
@@ -935,9 +939,9 @@ function toggleMenu(){
                 Solicita una eSIM en caso de que tengas SIM
             </p>
 
-            <button class="option-btn">
-                <a style="text-decoration: none; color: #ffffff;" href="SolicitareSIM.html"><span data-i18n="hub_mig_btn"> Migrar de SIM a eSIM</span></a>
-            </button>
+                <a class="option-btn" href="SolicitareSIM.html">
+                    <span data-i18n="hub_mig_btn">Migrar de SIM a eSIM</span>
+                </a>
 
         </div>
             
