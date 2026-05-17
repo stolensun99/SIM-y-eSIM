@@ -485,7 +485,64 @@ body.dark-mode .text-muted{
     color:#d6d6d6 !important;
 }
 
+.service-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.list-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.service-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    border-radius:10px;
+    transition:0.2s;
+}
+
+.mobile-services .list-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:0.2s;
+}
+
+/* HOVER */
+
+.mobile-services .service-link:hover .list-item{
+    background:#eff6fc;
+}
+
+.mobile-services .service-link:hover span{
+    color:#0078d4;
+}
+
+/* DARK MODE */
+
+body.dark-mode .mobile-services .service-link:hover .list-item{
+    background:#243647;
+}
+
+body.dark-mode .mobile-services .service-link:hover span{
+    color:#4aa8ff;
+}
+
 @media(max-width:900px){
+
+    .mobile-services .service-link{
+        width:100%;
+    }
+
+    .mobile-services .list-item{
+        width:100%;
+        min-height:58px;
+        cursor:pointer;
+    }
 
     .ms-search{
         display:none;
@@ -766,17 +823,70 @@ function toggleMenu(){
             </div>
 
             <div class="side-panel">
-                <h3 style="font-size:22px; margin-bottom:20px;" data-i18n="menu_side_h3">Servicios disponibles</h3>
+    <h3 style="font-size:22px; margin-bottom:20px;" data-i18n="menu_side_h3">
+        Servicios disponibles
+    </h3>
 
-                <div class="list">
-                    <div class="list-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/15782/15782419.png"></div><span data-i18n="menu_li_network">Estado de red y consumo</span></div>
-                    <div class="list-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/15720/15720843.png"></div><span data-i18n="menu_li_request">Solicitud de SIM/eSIM</span></div>
-                    <div class="list-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/11247/11247696.png"></div><span data-i18n="menu_li_support">Soporte técnico</span></div>
-                    <div class="list-item"><div><img style="height: 20px; width: 20px;" alt="SIM" src="https://cdn-icons-png.flaticon.com/512/17055/17055210.png"></div><span data-i18n="menu_li_settings">Configuración</span></div>
+    <div class="list mobile-services">
+
+        <a class="service-link" href="Estadodered.html">
+            <div class="list-item">
+                <div>
+                    <img style="height:20px; width:20px;"
+                    alt="SIM"
+                    src="https://cdn-icons-png.flaticon.com/512/15782/15782419.png">
                 </div>
-            </div>
 
-        </div>
+                <span data-i18n="menu_li_network">
+                    Estado de red y consumo
+                </span>
+            </div>
+        </a>
+
+        <a class="service-link" href="SolicitarSim.html">
+            <div class="list-item">
+                <div>
+                    <img style="height:20px; width:20px;"
+                    alt="SIM"
+                    src="https://cdn-icons-png.flaticon.com/512/15720/15720843.png">
+                </div>
+
+                <span data-i18n="menu_li_request">
+                    Solicitud de SIM/eSIM
+                </span>
+            </div>
+        </a>
+
+        <a class="service-link" href="SoporteTecnico.html">
+            <div class="list-item">
+                <div>
+                    <img style="height:20px; width:20px;"
+                    alt="SIM"
+                    src="https://cdn-icons-png.flaticon.com/512/11247/11247696.png">
+                </div>
+
+                <span data-i18n="menu_li_support">
+                    Soporte técnico
+                </span>
+            </div>
+        </a>
+
+        <a class="service-link" href="Configuracion.html">
+            <div class="list-item">
+                <div>
+                    <img style="height:20px; width:20px;"
+                    alt="SIM"
+                    src="https://cdn-icons-png.flaticon.com/512/17055/17055210.png">
+                </div>
+
+                <span data-i18n="nav_settings">
+                    Configuración
+                </span>
+            </div>
+        </a>
+
+    </div>
+</div>
 
     </section>
 
